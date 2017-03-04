@@ -1,1 +1,13 @@
 /target/
+### java compiler
+*.class
+
+# package files #
+*.war
+*.ear
+*.jar
+
+# ignore eclipse files
+#.project
+#.classpath
+#.settings
