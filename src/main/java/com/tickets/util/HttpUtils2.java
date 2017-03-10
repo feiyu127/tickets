@@ -2,10 +2,12 @@ package com.tickets.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.zip.GZIPInputStream;
 
 public class HttpUtils2
 {
@@ -17,7 +19,7 @@ public class HttpUtils2
         // post("http://mobile.fengchaowy.cn/LoginActionN/loginN.do", "userName=xuejiao&password=123456&groupCode=sd");
     }
     
-    public static void get(String url, String param)
+    public static String get(String url, String param)
     {
         String result = "";
         String realUrl = url + "?" + param;
@@ -34,15 +36,20 @@ public class HttpUtils2
             connection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36");
             // 建立实际的连接
             connection.connect();
-            
+            String contentEncoding = connection.getHeaderField("Content-Encoding");
+            System.out.println(contentEncoding);
             // 定义 BufferedReader输入流来读取URL的响应
-            in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            InputStream input = connection.getInputStream();
+            if("gzip".equals(contentEncoding)){
+                input  = new GZIPInputStream(input);
+            }
+            in = new BufferedReader(new InputStreamReader(input));
             String line;
             while ((line = in.readLine()) != null)
             {
                 result += line;
             }
-            System.out.println(result);
+            return result;
         }
         catch (Exception e)
         {
@@ -64,6 +71,7 @@ public class HttpUtils2
                 e2.printStackTrace();
             }
         }
+        return result;
     }
     
     public static void post(String url, String param)
