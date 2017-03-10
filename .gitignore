@@ -9,5 +9,6 @@
 
 # ignore eclipse files
 #.project
-*.classpath
 #.settings
+/.classpath
+/.gitignore
