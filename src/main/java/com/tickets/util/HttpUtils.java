@@ -86,6 +86,7 @@ public class HttpUtils {
      * @param params 
      * @return 
      */  
+    @SuppressWarnings("deprecation")
     public static String doGet(String url, Map<String, Object> params) {  
         String apiUrl = url;  
         StringBuffer param = new StringBuffer();  
