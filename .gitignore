@@ -1,5 +1,4 @@
-/target/*
-/target/m2e-wtp/
+/target/
 ### java compiler
 *.class
 
@@ -9,7 +8,7 @@
 *.jar
 
 # ignore eclipse files
-#.project
-#.settings
+/.project
+/.settings/
 /.classpath
 /.gitignore
