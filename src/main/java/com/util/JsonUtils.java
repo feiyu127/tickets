@@ -8,7 +8,7 @@
  * 修改单号:  <修改单号>
  * 修改内容:  <修改内容>
  */
-package com.tickets.util;
+package com.util;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

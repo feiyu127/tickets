@@ -1,4 +1,4 @@
-package com.tickets.util;
+package com.util;
 
 public class StringUtils
 {

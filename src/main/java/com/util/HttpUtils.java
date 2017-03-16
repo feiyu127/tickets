@@ -1,4 +1,4 @@
-package com.tickets.util;
+package com.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 
-public class HttpUtils2
+public class HttpUtils
 {
     public static void main(String[] args)
     {

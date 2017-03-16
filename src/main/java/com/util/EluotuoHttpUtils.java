@@ -1,4 +1,4 @@
-package com.tickets.util;
+package com.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,7 +47,7 @@ import org.apache.http.util.EntityUtils;
  * @date : 2015/7/21 
  * @see : TODO 
  */  
-public class HttpUtils {  
+public class EluotuoHttpUtils {  
     private static PoolingHttpClientConnectionManager connMgr;  
     private static RequestConfig requestConfig;  
     private static final int MAX_TIMEOUT = 7000;  
