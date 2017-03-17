@@ -4,9 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSONObject;
-import com.tickets.util.HttpUtils2;
-import com.tickets.util.JsonUtils;
+import com.util.HttpUtils;
+import com.util.JsonUtils;
 
 public class TestMain
 {
@@ -18,7 +17,7 @@ public class TestMain
     public static void test1()
     {
         String nuomiCityListUrl = "http://dianying.nuomi.com/common/city/citylist?hasLetter=false&isjson=true";
-        String result = HttpUtils2.get(nuomiCityListUrl, "");
+        String result = HttpUtils.get(nuomiCityListUrl, "");
         Map<String, Object> resultList = (Map<String, Object>)JsonUtils.parseJSON2Map(result);
         System.out.println(resultList.keySet());
         Map<String, Object> temp1 = (Map<String, Object>)resultList.get("data");
