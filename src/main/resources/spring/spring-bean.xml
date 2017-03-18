@@ -19,4 +19,5 @@
 	<task:annotation-driven />
 	
 	<import resource="classpath*:/spring/spring-mybatis.xml" />
+	<import resource="classpath*:/spring/spring-mvc.xml" />
 </beans>

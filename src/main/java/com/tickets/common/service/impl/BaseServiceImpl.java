@@ -108,7 +108,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T>
         }
         catch (Exception e)
         {
-            logger.error("", e);
+            e.printStackTrace();
             throw new RuntimeException();
         }
     }

@@ -22,4 +22,27 @@
 		#{updateTime}
 		)
 	</insert>
+	<select id="getEntityByKey" parameterType="Integer" resultType="sysUser">
+		SELECT 
+		`user_name`,
+		`login_name`,
+		`nick_name`,
+		`phone_num`,
+		`qq`,
+		`create_time`,
+		`update_time`
+		FROM `t_sys_user`
+		WHERE user_id = #{_parameter}
+	</select>
+	<select id="getAll" resultType="sysUser">
+		SELECT 
+		`user_name`,
+		`login_name`,
+		`nick_name`,
+		`phone_num`,
+		`qq`,
+		`create_time`,
+		`update_time`
+		FROM `t_sys_user`
+	</select>
 </mapper>

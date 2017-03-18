@@ -14,7 +14,7 @@ public class TestTask
         System.out.println("Test task init");
     }
     
-    @Scheduled(fixedRate=500)
+    @Scheduled(fixedRate=5000000)
     public void doSomething() {
         System.out.println("aaaaaaaaaaaa");
     }
