@@ -46,7 +46,8 @@
 	<!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="mapperLocations" value="classpath:com/tickets/**/*.xml" />
+		<property name="mapperLocations" value="classpath:mapper/tickets/**/*.xml" />
+		<property name="typeAliasesPackage" value="com.tickets.sys.bean;"/>
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

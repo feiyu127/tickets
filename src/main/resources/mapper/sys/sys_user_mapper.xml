@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tickets.sys.dao.SysUserMapper">
+	<insert id="saveEntity" parameterType="sysUser">
+		INSERT INTO `t_sys_user` (
+		`user_name`,
+		`login_name`,
+		`nick_name`,
+		`phone_num`,
+		`qq`,
+		`create_time`,
+		`update_time`
+		)
+		VALUES
+		(
+		#{userName},
+		#{loginName},
+		#{nickName},
+		#{phoneNum},
+		#{qq},
+		#{createTime},
+		#{updateTime}
+		)
+	</insert>
+</mapper>
