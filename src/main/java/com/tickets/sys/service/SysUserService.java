@@ -10,7 +10,7 @@
  */
 package com.tickets.sys.service;
 
-import com.tickets.common.service.PSBaseService;
+import com.tickets.common.service.BaseService;
 import com.tickets.sys.bean.SysUser;
 
 /**
@@ -21,7 +21,7 @@ import com.tickets.sys.bean.SysUser;
  * @see [相关类/方法]
  * @since [产品/模块版本]
  */
-public interface SysUserService extends PSBaseService<SysUser, Integer>
+public interface SysUserService extends BaseService<SysUser>
 {
     
 }

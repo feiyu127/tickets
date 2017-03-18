@@ -46,8 +46,14 @@
 	<!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="mapperLocations" value="classpath:mapper/tickets/**/*.xml" />
+		<property name="mapperLocations" value="classpath:mapper/**/*.xml" />
 		<property name="typeAliasesPackage" value="com.tickets.sys.bean;"/>
+	</bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 扫描me.gacl.dao这个包以及它的子包下的所有映射接口类 -->
+		<property name="basePackage" value="com.tickets.sys.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

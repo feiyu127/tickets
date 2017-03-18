@@ -10,7 +10,6 @@
 
 package com.tickets.common.service.impl;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,7 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tickets.common.dao.BaseMapper;
-import com.tickets.common.service.PSBaseService;
+import com.tickets.common.service.BaseService;
 
 /**
  * 
@@ -29,33 +28,19 @@ import com.tickets.common.service.PSBaseService;
  * @version
  * @desc
  */
-public abstract class PSBaseServiceMyBatisImpl<T, ID extends Serializable> implements PSBaseService<T, ID>
+public abstract class BaseServiceImpl<T> implements BaseService<T>
 {
     
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
     
     @Autowired
-    protected BaseMapper<T, ID> baseMapper;
+    protected BaseMapper<T> baseMapper;
     
-    public BaseMapper<T, ID> getBaseMapper()
-    {
-        return baseMapper;
-    };
-    
-    @SuppressWarnings("unchecked")
     @Override
-    public ID saveEntity(T entity)
+    public Integer saveEntity(T entity)
     {
-        try
-        {
             
-            return (ID)this.getBaseMapper().saveEntity(entity);
-        }
-        catch (Exception e)
-        {
-            logger.error("", e);
-            throw new RuntimeException();
-        }
+            return (Integer)baseMapper.saveEntity(entity);
     }
     
     @Override
@@ -63,7 +48,7 @@ public abstract class PSBaseServiceMyBatisImpl<T, ID extends Serializable> imple
     {
         try
         {
-            this.getBaseMapper().updateEntity(entity);
+            baseMapper.updateEntity(entity);
         }
         catch (Exception e)
         {
@@ -77,7 +62,7 @@ public abstract class PSBaseServiceMyBatisImpl<T, ID extends Serializable> imple
     {
         try
         {
-            this.getBaseMapper().deleteEntity(entity);
+            baseMapper.deleteEntity(entity);
         }
         catch (Exception e)
         {
@@ -87,11 +72,11 @@ public abstract class PSBaseServiceMyBatisImpl<T, ID extends Serializable> imple
     }
     
     @Override
-    public void deleteByKey(ID id)
+    public void deleteByKey(Integer id)
     {
         try
         {
-            this.getBaseMapper().deleteByKey(id);
+            baseMapper.deleteByKey(id);
         }
         catch (Exception e)
         {
@@ -101,11 +86,11 @@ public abstract class PSBaseServiceMyBatisImpl<T, ID extends Serializable> imple
     }
     
     @Override
-    public void batchDelete(Collection<ID> ids)
+    public void batchDelete(Collection<Integer> ids)
     {
         try
         {
-            this.getBaseMapper().batchDelete(ids);
+            baseMapper.batchDelete(ids);
         }
         catch (Exception e)
         {
@@ -115,11 +100,11 @@ public abstract class PSBaseServiceMyBatisImpl<T, ID extends Serializable> imple
     }
     
     @Override
-    public T getEntityByKey(ID id)
+    public T getEntityByKey(Integer id)
     {
         try
         {
-            return this.getBaseMapper().getEntityByKey(id);
+            return baseMapper.getEntityByKey(id);
         }
         catch (Exception e)
         {
@@ -133,7 +118,7 @@ public abstract class PSBaseServiceMyBatisImpl<T, ID extends Serializable> imple
     {
         try
         {
-            return this.getBaseMapper().getAll();
+            return baseMapper.getAll();
         }
         catch (Exception e)
         {
@@ -147,7 +132,7 @@ public abstract class PSBaseServiceMyBatisImpl<T, ID extends Serializable> imple
     {
         try
         {
-            return this.getBaseMapper().getCount();
+            return baseMapper.getCount();
         }
         catch (Exception e)
         {
@@ -161,7 +146,7 @@ public abstract class PSBaseServiceMyBatisImpl<T, ID extends Serializable> imple
     {
         try
         {
-            return this.getBaseMapper().getCount(entity);
+            return baseMapper.getCount(entity);
         }
         catch (Exception e)
         {
