@@ -3,8 +3,11 @@ package com.tickets.sys.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -29,8 +32,18 @@ public class SysUserController extends BaseController
     }
     @RequestMapping("getAll")
     @ResponseBody
-    public void getAll()
+    public List<SysUser> getAll()
     {
         List<SysUser> user = sysUserService.getAll();
+        return user;
+    }
+    
+    @RequestMapping("validateUser")
+    @ResponseBody
+    public String validate(@Valid SysUser user, Errors errors){
+    	
+    	System.out.println(errors.hasErrors());
+    	System.out.println(errors);
+    	return "hello";
     }
 }

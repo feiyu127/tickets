@@ -12,6 +12,10 @@ package com.tickets.sys.bean;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+
 /**
  * <一句话功能简述>
  * 
@@ -34,6 +38,7 @@ public class SysUser implements Serializable
     
     private String nickName;
     
+    @NotNull(message="loginName is not allow null")
     private String loginName;
     
     private String phoneNum;
@@ -43,6 +48,9 @@ public class SysUser implements Serializable
     private String createTime;
     
     private String updateTime;
+    
+    @Length(min=6, max=32, message="password length should between {min} and {max}")
+    private String password;
     
     public Integer getUserId()
     {
@@ -123,4 +131,12 @@ public class SysUser implements Serializable
     {
         this.updateTime = updateTime;
     }
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }

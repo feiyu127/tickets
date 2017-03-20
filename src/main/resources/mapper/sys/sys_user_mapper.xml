@@ -5,6 +5,7 @@
 		INSERT INTO `t_sys_user` (
 		`user_name`,
 		`login_name`,
+		`password`,
 		`nick_name`,
 		`phone_num`,
 		`qq`,
@@ -15,6 +16,7 @@
 		(
 		#{userName},
 		#{loginName},
+		#{password},
 		#{nickName},
 		#{phoneNum},
 		#{qq},
@@ -26,6 +28,7 @@
 		SELECT 
 		`user_name`,
 		`login_name`,
+		`password`,
 		`nick_name`,
 		`phone_num`,
 		`qq`,
@@ -38,6 +41,7 @@
 		SELECT 
 		`user_name`,
 		`login_name`,
+		`password`,
 		`nick_name`,
 		`phone_num`,
 		`qq`,
