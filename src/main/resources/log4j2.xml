@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration status="OFF">
 	<Properties>
-		<Property name="logBaseDir">./logs</Property>
+		<Property name="logBaseDir">../logs/tickets</Property>
 	</Properties>
 	<appenders>
 		<Console name="Console" target="SYSTEM_OUT">

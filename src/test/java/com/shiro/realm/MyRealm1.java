@@ -1,4 +1,4 @@
-package com.base;
+package com.shiro.realm;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -9,11 +9,11 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.realm.Realm;
 
-public class MyRealm implements Realm{
+public class MyRealm1 implements Realm{
 
 	@Override
 	public String getName() {
-		return "myRealm";
+		return "myRealm1";
 	}
 
 	@Override
@@ -26,15 +26,15 @@ public class MyRealm implements Realm{
 	public AuthenticationInfo getAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		 String username = (String)token.getPrincipal();  //得到用户名  
 	        String password = new String((char[])token.getCredentials()); //得到密码  
-	        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaa");
-	        if(!"zhang".equals(username)) {  
+	        System.out.println("validate @ myrealm1");
+	        if("wang,zhang".indexOf(username) < 0) {  
 	            throw new UnknownAccountException(); //如果用户名错误  
 	        }  
-	        if(!"123".equals(password)) {  
+	        if("127,123".indexOf(password) < 0) {  
 	            throw new IncorrectCredentialsException(); //如果密码错误  
 	        }  
 	        //如果身份认证验证成功，返回一个AuthenticationInfo实现；  
-	        return new SimpleAuthenticationInfo(username, password, getName());  
+	        return new SimpleAuthenticationInfo("other", password, getName());  
 	}
 
 }

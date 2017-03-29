@@ -1,0 +1,50 @@
+2017-03-18 at 22:08:51 CST DEBUG com.alibaba.druid.filter.logging.Log4j2Filter 132 connectionLog - {conn-10001} connected
+2017-03-18 at 22:08:51 CST INFO  com.alibaba.druid.support.logging.Log4j2Impl 106 info - {dataSource-1} inited
+2017-03-18 at 22:08:52 CST DEBUG com.alibaba.druid.filter.logging.Log4j2Filter 132 connectionLog - {conn-10001} pool-connect
+2017-03-18 at 22:08:52 CST DEBUG com.alibaba.druid.filter.logging.Log4j2Filter 137 statementLog - {conn-10001, pstmt-20000} created. INSERT INTO `t_sys_user` (
+		`user_name`,
+		`login_name`,
+		`nick_name`,
+		`phone_num`,
+		`qq`,
+		`create_time`,
+		`update_time`
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		now(),
+		?
+		)
+2017-03-18 at 22:08:52 CST DEBUG com.alibaba.druid.filter.logging.Log4j2Filter 137 statementLog - {conn-10001, pstmt-20000} Parameters : [南守孝, feiyu127, 飞羽, 13934377673, 1119290647, null]
+2017-03-18 at 22:08:52 CST DEBUG com.alibaba.druid.filter.logging.Log4j2Filter 137 statementLog - {conn-10001, pstmt-20000} Types : [VARCHAR, VARCHAR, VARCHAR, VARCHAR, VARCHAR, OTHER]
+2017-03-18 at 22:08:52 CST DEBUG com.alibaba.druid.filter.logging.Log4j2Filter 137 statementLog - {conn-10001, pstmt-20000} executed. insert into `t_sys_user` (`user_name`, `login_name`, `nick_name`, `phone_num`, `qq`
+	, `create_time`, `update_time`)
+values ('南守孝', 'feiyu127', '飞羽', '13934377673', '1119290647'
+	, now(), null)
+2017-03-18 at 22:08:52 CST DEBUG com.alibaba.druid.filter.logging.Log4j2Filter 137 statementLog - {conn-10001, pstmt-20000} executed. 36.815744 millis. INSERT INTO `t_sys_user` (
+		`user_name`,
+		`login_name`,
+		`nick_name`,
+		`phone_num`,
+		`qq`,
+		`create_time`,
+		`update_time`
+		)
+		VALUES
+		(
+		?,
+		?,
+		?,
+		?,
+		?,
+		now(),
+		?
+		)
+2017-03-18 at 22:08:52 CST DEBUG com.alibaba.druid.filter.logging.Log4j2Filter 137 statementLog - {conn-10001, pstmt-20000} clearParameters. 
+2017-03-18 at 22:08:52 CST DEBUG com.alibaba.druid.support.logging.Log4j2Impl 63 debug - {conn-10001, pstmt-20000} enter cache
+2017-03-18 at 22:08:52 CST DEBUG com.alibaba.druid.filter.logging.Log4j2Filter 132 connectionLog - {conn-10001} pool-recycle
