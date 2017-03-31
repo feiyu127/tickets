@@ -90,4 +90,20 @@ public class StringUtils
         }
         return h;
     }
+    
+    public static String join(String[] strings, String spilt)
+    {
+        if (strings == null || spilt == null)
+        {
+            return null;
+        }
+        StringBuffer sbr = new StringBuffer();
+        
+        for (int i = 0, length = strings.length; i < length; i++)
+        {
+            sbr.append(spilt).append(strings[i]);
+        }
+        int spiltLength = spilt.length();
+        return sbr.length() > spiltLength ? sbr.substring(spiltLength) : sbr.toString();
+    }
 }

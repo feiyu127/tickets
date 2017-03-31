@@ -1,25 +1,23 @@
-<html>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html >
 <head>
-<link rel="stylesheet" type="text/css"
-	href="css/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css" href="css/easyui/themes/icon.css">
-<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
-<script type="text/javascript" src="js/easyui/jquery.min.js"></script>
-<script type="text/javascript" src="js/easyui/jquery.easyui.min.js"></script>
+  <meta charset="UTF-8">
+  <title>登录</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-	<h2>Hello World!</h2>
-	<form id="form" action="http://www2.j289cwsupdownspckxs.info/freeone/down.php">
-		<input type="text" value="torrent" id="type" name="type" />
-  <input type="text" value="ONC45Hb" id="id" name="id" />
-  <input type="text" value="ONC45Hb" id="name" name="name" />
 
-		<input type="submit" onclick="click();"/>
-	</form>
-	<script>
-		function click(){
-			$('#form').submit();
-		}
-	</script>
+<body>
+  <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Site<span>Random</span></div>
+		</div>
+		<br>
+		<div class="login">
+				<input type="text" placeholder="username" name="user"><br>
+				<input type="password" placeholder="password" name="password"><br>
+				<input type="button" value="Login">
+		</div>
 </body>
 </html>

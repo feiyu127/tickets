@@ -32,10 +32,11 @@ public class SysUserController extends BaseController
     }
     @RequestMapping("getAll")
     @ResponseBody
-    public List<SysUser> getAll()
+    public String getAll()
     {
         List<SysUser> user = sysUserService.getAll();
-        return user;
+        
+        return user.toString();
     }
     
     @RequestMapping("validateUser")

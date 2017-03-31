@@ -37,6 +37,15 @@
 		</property>
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
-
+	<mvc:interceptors >
+		<mvc:interceptor >
+			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/Login"/>
+			<mvc:exclude-mapping path="/img/**"/>
+			<mvc:exclude-mapping path="/js/**"/>
+			<mvc:exclude-mapping path="/css/**"/>
+			<bean class="com.tickets.filter.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 </beans>
