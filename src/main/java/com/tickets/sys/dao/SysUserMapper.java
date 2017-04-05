@@ -13,16 +13,20 @@ package com.tickets.sys.dao;
 import com.tickets.common.dao.BaseMapper;
 import com.tickets.sys.bean.SysUser;
 
-
 /**
  * <一句话功能简述>
  * 
- * @author  nanshouxiao
- * @version  [版本号, 2017年3月18日]
- * @see  [相关类/方法]
- * @since  [产品/模块版本]
+ * @author nanshouxiao
+ * @version [版本号, 2017年3月18日]
+ * @see [相关类/方法]
+ * @since [产品/模块版本]
  */
-public interface SysUserMapper extends BaseMapper<SysUser> 
-{
-
+public interface SysUserMapper extends BaseMapper<SysUser> {
+	/**
+	 * 根据用户名查询用户
+	 * 
+	 * @param user
+	 * @return
+	 */
+	SysUser getUserByLoginName(SysUser user);
 }

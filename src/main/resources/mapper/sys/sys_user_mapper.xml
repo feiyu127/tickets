@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tickets.sys.dao.SysUserMapper">
+	<resultMap type="sysUser" id="userResultMap">
+		<id column="user_id" property="id"/>
+		<result column="user_name" property="userName"/>
+		<result column="login_name" property="loginName"/>
+		<result column="password" property="password"/>
+		<result column="nick_name" property="nickName"/>
+		<result column="phone_num" property="phoneNum"/>
+		<result column="qq" property="qq"/>
+		<result column="create_time" property="createTime"/>
+		<result column="update_time" property="updateTime"/>
+	</resultMap>
 	<insert id="saveEntity" parameterType="sysUser">
 		INSERT INTO `t_sys_user` (
 		`user_name`,
@@ -48,5 +59,18 @@
 		`create_time`,
 		`update_time`
 		FROM `t_sys_user`
+	</select>
+	<select id="getUserByLoginName" parameterType="sysUser" resultMap="userResultMap">
+		SELECT 
+		`user_name`,
+		`login_name`,
+		`password`,
+		`nick_name`,
+		`phone_num`,
+		`qq`,
+		`create_time`,
+		`update_time`
+		FROM `t_sys_user`
+		WHERE login_name = #{loginName}
 	</select>
 </mapper>
