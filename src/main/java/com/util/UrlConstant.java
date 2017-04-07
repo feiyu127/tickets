@@ -28,7 +28,7 @@ public interface UrlConstant
     /**
      * 获取猫眼当前最热的电影 type=hot 类型 offset : 数据开始位置 limit ：偏移量
      */
-    String MAOYAN_HOT_MOVIE = "http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=1000";
+    String MAOYAN_HOT_MOVIE = "http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=100";
     
     /**
      * 查出电影详情(包含评论)

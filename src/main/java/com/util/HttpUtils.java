@@ -18,7 +18,9 @@ public class HttpUtils
         get(nuomiCityListUrl, "hasLetter=false&isjson=true");
         // post("http://mobile.fengchaowy.cn/LoginActionN/loginN.do", "userName=xuejiao&password=123456&groupCode=sd");
     }
-    
+    public static String get(String url){
+        return get(url, "");
+    }
     public static String get(String url, String param)
     {
         String result = "";
@@ -28,16 +30,10 @@ public class HttpUtils
         {
             URL httpUrl = new URL(realUrl);
             URLConnection connection = httpUrl.openConnection();
-            connection.addRequestProperty("Cache-Control", "max-age=0");
-            connection.addRequestProperty("Host", "dianying.nuomi.com");
-            connection.addRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
-            connection.addRequestProperty("Accept-Language", "zh-CN,zh;q=0.8");
-            connection.addRequestProperty("Accept-Encoding", "gzip, deflate, sdch");
-            connection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36");
+            addHeaderToRequest(connection);
             // 建立实际的连接
             connection.connect();
             String contentEncoding = connection.getHeaderField("Content-Encoding");
-            System.out.println(contentEncoding);
             // 定义 BufferedReader输入流来读取URL的响应
             InputStream input = connection.getInputStream();
             if("gzip".equals(contentEncoding)){
@@ -53,7 +49,6 @@ public class HttpUtils
         }
         catch (Exception e)
         {
-            System.out.println("发送GET请求出现异常！" + e);
             e.printStackTrace();
         }
         // 使用finally块来关闭输入流
@@ -74,7 +69,15 @@ public class HttpUtils
         return result;
     }
     
-    public static void post(String url, String param)
+    private static void addHeaderToRequest(URLConnection connection){
+        connection.addRequestProperty("Cache-Control", "max-age=0");
+        connection.addRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+        connection.addRequestProperty("Accept-Language", "zh-CN,zh;q=0.8");
+        connection.addRequestProperty("Accept-Encoding", "gzip, deflate, sdch");
+        connection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36");
+    }
+    
+    public static String post(String url, String param)
     {
         PrintWriter out = null;
         BufferedReader in = null;
@@ -84,6 +87,7 @@ public class HttpUtils
             URL realUrl = new URL(url);
             // 打开和URL之间的连接
             URLConnection conn = realUrl.openConnection();
+            addHeaderToRequest(conn);
             // 发送POST请求必须设置如下两行
             conn.setDoOutput(true);
             conn.setDoInput(true);
@@ -100,7 +104,7 @@ public class HttpUtils
             {
                 result += line;
             }
-            System.out.println(result);
+            return result;
         }
         catch (Exception e)
         {
@@ -126,5 +130,6 @@ public class HttpUtils
                 ex.printStackTrace();
             }
         }
+        return result;
     }
 }
