@@ -20,69 +20,62 @@ import java.io.Serializable;
  * @see [相关类/方法]
  * @since [产品/模块版本]
  */
-public class City implements Serializable
-{
-    /**
-     * serialVersionUID
-     */
-    private static final long serialVersionUID = 1850258848130756024L;
+public class City implements Serializable {
+	/**
+	 * serialVersionUID
+	 */
+	private static final long serialVersionUID = 1850258848130756024L;
 
-    private String cityName;
-    
-    private String cityPinYin;
-    
-    private String cityCode;
-    
-    /**
-     * 百度里的id
-     */
-    private String nuomiId;
-    
-    public String getCityName()
-    {
-        return cityName;
-    }
-    
-    public void setCityName(String cityName)
-    {
-        this.cityName = cityName;
-    }
-    
-    public String getCityPinYin()
-    {
-        return cityPinYin;
-    }
-    
-    public void setCityPinYin(String cityPinYin)
-    {
-        this.cityPinYin = cityPinYin;
-    }
-    
-    public String getCityCode()
-    {
-        return cityCode;
-    }
-    
-    public void setCityCode(String cityCode)
-    {
-        this.cityCode = cityCode;
-    }
+	private String cityName;
 
-    /**
-     * 获取 nuomiId
-     * @return 返回 nuomiId
-     */
-    public String getNuomiId()
-    {
-        return nuomiId;
-    }
+	private String cityPinYin;
 
-    /**
-     * 设置 nuomiId
-     * @param 对nuomiId进行赋值
-     */
-    public void setNuomiId(String nuomiId)
-    {
-        this.nuomiId = nuomiId;
-    }
+	private String cityCode;
+
+	/**
+	 * 百度里的id
+	 */
+	private String nuomiId;
+
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+	public String getCityPinYin() {
+		return cityPinYin;
+	}
+
+	public void setCityPinYin(String cityPinYin) {
+		this.cityPinYin = cityPinYin;
+	}
+
+	public String getCityCode() {
+		return cityCode;
+	}
+
+	public void setCityCode(String cityCode) {
+		this.cityCode = cityCode;
+	}
+
+	/**
+	 * 获取 nuomiId
+	 * 
+	 * @return 返回 nuomiId
+	 */
+	public String getNuomiId() {
+		return nuomiId;
+	}
+
+	/**
+	 * 设置 nuomiId
+	 * 
+	 * @param 对nuomiId进行赋值
+	 */
+	public void setNuomiId(String nuomiId) {
+		this.nuomiId = nuomiId;
+	}
 }
