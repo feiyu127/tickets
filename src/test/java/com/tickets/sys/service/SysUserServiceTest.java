@@ -10,6 +10,11 @@
  */
 package com.tickets.sys.service;
 
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 import javax.annotation.Resource;
 
 import org.junit.Before;
@@ -30,7 +35,7 @@ import com.tickets.sys.service.impl.SysUserServiceImpl;
  * @since [产品/模块版本]
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring/spring-bean.xml"})
+@ContextConfiguration(locations = {"classpath*:spring/spring-bean.xml"})
 public class SysUserServiceTest
 {
     @Resource(name = "sysUserServiceImpl")
@@ -53,5 +58,15 @@ public class SysUserServiceTest
     public void testAdd()
     {
         sysUserServiceImpl.saveEntity(user);
+    }
+    @Test
+    public void testSelect()
+    {
+        List<SysUser> all = sysUserServiceImpl.getAll();
+        Map<String, List<SysUser>> collect = all.stream().collect(Collectors.groupingBy(SysUser::getNickName));
+        Map userMap = all.stream().distinct().collect(Collectors.toMap(SysUser::getLoginName,SysUser::getPassword, (t1, t2) ->{
+            return t1 + "," + t2;
+        }));
+        System.out.println(userMap);
     }
 }

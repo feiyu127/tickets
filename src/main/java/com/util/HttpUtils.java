@@ -9,6 +9,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 
+<<<<<<< HEAD
 public class HttpUtils {
 	public static void main(String[] args) {
 		String nuomiCityListUrl = "http://dianying.nuomi.com/common/city/citylist";

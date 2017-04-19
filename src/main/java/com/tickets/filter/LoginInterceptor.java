@@ -22,17 +22,19 @@ public class LoginInterceptor implements HandlerInterceptor {
 		System.out.println(uri);
 		HttpSession session = request.getSession();
 		System.out.println("filter session Id:" + session.getId());
-		if (uri.indexOf("/login/") < 0 && session.getAttribute("userName") == null) {
-			response.sendRedirect("/");
-			return false;
-		}
+//		if (uri.indexOf("/login/") < 0 && session.getAttribute("userName") == null) {
+//			response.sendRedirect("/");
+//			return false;
+//		}
+		// 跨域用，表示接受哪个域过来的数据
+		response.addHeader("Access-Control-Allow-Origin", "*");
 		return true;
 	}
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-
+	    
 	}
 
 	@Override

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tickets.sys.dao.SysUserMapper">
 	<resultMap type="sysUser" id="userResultMap">
-		<id column="user_id" property="id"/>
+		<id column="user_id" property="userId"/>
 		<result column="user_name" property="userName"/>
 		<result column="login_name" property="loginName"/>
 		<result column="password" property="password"/>
@@ -35,7 +35,7 @@
 		#{updateTime}
 		)
 	</insert>
-	<select id="getEntityByKey" parameterType="Integer" resultType="sysUser">
+	<select id="getEntityByKey" parameterType="Integer" resultMap="userResultMap">
 		SELECT 
 		`user_name`,
 		`login_name`,
@@ -48,7 +48,7 @@
 		FROM `t_sys_user`
 		WHERE user_id = #{_parameter}
 	</select>
-	<select id="getAll" resultType="sysUser">
+	<select id="getAll" resultMap="userResultMap">
 		SELECT 
 		`user_name`,
 		`login_name`,

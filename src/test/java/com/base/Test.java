@@ -10,6 +10,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import com.alibaba.druid.util.StringUtils;
 import com.util.MailUtils;
 
 public class Test {
@@ -27,7 +28,6 @@ public class Test {
 				return new PasswordAuthentication(fromMail, "hmfxzfrphtgybhih"); // 发件人邮件用户名、密码
 			}
 		});
-
 		MimeMessage message = new MimeMessage(session);
 		message.setFrom(new InternetAddress(fromMail));
 		message.addRecipient(Message.RecipientType.TO, new InternetAddress(toMail));
