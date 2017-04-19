@@ -35,7 +35,7 @@
 		#{updateTime}
 		)
 	</insert>
-	<select id="getEntityByKey" parameterType="Integer" resultType="sysUser">
+	<select id="getEntityByKey" parameterType="Integer" resultMap="userResultMap">
 		SELECT 
 		`user_name`,
 		`login_name`,
@@ -48,7 +48,7 @@
 		FROM `t_sys_user`
 		WHERE user_id = #{_parameter}
 	</select>
-	<select id="getAll" resultType="sysUser">
+	<select id="getAll" resultMap="userResultMap">
 		SELECT 
 		`user_name`,
 		`login_name`,
