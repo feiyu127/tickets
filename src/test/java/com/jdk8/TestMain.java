@@ -34,6 +34,7 @@ public class TestMain
         System.out.println("aaaaaaaaa");
     }
     
+    @SuppressWarnings("serial")
     public static void TestListGroupBy(){
         List<Map<String, String>> ls = new ArrayList<>();
         ls.add(new HashMap<String, String>(){{

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
@@ -14,8 +13,6 @@ import org.jsoup.select.Elements;
 
 public class JanDanMain
 {
-    private static String ip = "127.0.0.1";
-    private static int port = 6379;
     private static final String JAN_DAN_URL = "http://jandan.net";
     private static final String JAN_DAN_SAVE_PATH = "E:/jandan/";
     private static final String SPIT = ",";
