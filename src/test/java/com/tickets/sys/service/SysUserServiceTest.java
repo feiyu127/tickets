@@ -39,7 +39,7 @@ import com.tickets.sys.service.impl.SysUserServiceImpl;
 public class SysUserServiceTest
 {
     @Resource(name = "sysUserServiceImpl")
-    private SysUserServiceImpl sysUserServiceImpl;
+    private SysUserService sysUserService;
     
     private SysUser user;
     
@@ -57,12 +57,10 @@ public class SysUserServiceTest
     @Test
     public void testAdd()
     {
-        sysUserServiceImpl.saveEntity(user);
     }
-    @Test
     public void testSelect()
     {
-        List<SysUser> all = sysUserServiceImpl.getAll();
+        List<SysUser> all = sysUserService.getAll();
         Map<String, List<SysUser>> collect = all.stream().collect(Collectors.groupingBy(SysUser::getNickName));
         Map userMap = all.stream().distinct().collect(Collectors.toMap(SysUser::getLoginName,SysUser::getPassword, (t1, t2) ->{
             return t1 + "," + t2;
