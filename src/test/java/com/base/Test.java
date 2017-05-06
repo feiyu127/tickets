@@ -10,9 +10,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import com.alibaba.druid.util.StringUtils;
-import com.util.MailUtils;
-
 public class Test {
 	public void test2() throws Exception {
 		final String fromMail = "469432416@qq.com";

@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.tickets.common.controller.BaseController;
 import com.tickets.sys.bean.SysUser;
@@ -18,7 +17,7 @@ import com.tickets.sys.service.SysUserService;
 
 @Controller
 @RequestMapping("login")
-public class LoginController extends BaseController
+public class LoginController extends BaseController<String>
 {
     
     @Resource

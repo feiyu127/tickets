@@ -7,7 +7,6 @@ import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,7 +16,7 @@ import com.tickets.sys.service.SysUserService;
 
 @Controller
 @RequestMapping("sysUser")
-public class SysUserController extends BaseController
+public class SysUserController extends BaseController<SysUser>
 {
     
     @Resource

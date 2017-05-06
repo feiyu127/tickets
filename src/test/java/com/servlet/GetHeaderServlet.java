@@ -10,11 +10,14 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns="/getHeaders")
 public class GetHeaderServlet extends HttpServlet
 {
+    /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = 4927450632165336750L;
     @Override
     public void init()
         throws ServletException
@@ -25,7 +28,6 @@ public class GetHeaderServlet extends HttpServlet
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException
     {
-       HttpSession session = req.getSession();
         
        Cookie cookie = new Cookie("name", "feiyu127");
        Cookie cookie2 = new Cookie("age", "28");
