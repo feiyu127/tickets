@@ -36,15 +36,6 @@ import com.alibaba.fastjson.serializer.SimpleDateFormatSerializer;
  * @see [相关类/方法]
  * @since [产品/模块版本]
  */
-
-/**
- * Json工具类
- * 
- * @author wanglei
- * @version [版本号, 2015年9月23日]
- * @see [相关类/方法]
- * @since [产品/模块版本]
- */
 public class JsonUtils
 {
     

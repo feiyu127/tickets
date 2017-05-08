@@ -1,34 +1,155 @@
-/*
- * 文 件 名:  MaoyanCity.java
- * 版    权:  
- * 描    述:  <描述>
- * 修 改 人:  nanshouxiao
- * 修改时间:  2017年3月15日
- * 跟踪单号:  <跟踪单号>
- * 修改单号:  <修改单号>
- * 修改内容:  <修改内容>
+/**
+ * @单位名称：飞羽个人
+ * 	Copyright (c) 2017 All Rights Reserved.
+ * @系统名称：测试
+ * @工程名称：
+ * @文件名称: 
+ * @类路径: 
  */
 package com.tickets.maoyan.bean;
 
+import java.io.Serializable;
+
 /**
- * 猫眼的城市
+ * 猫眼城市
  * 
- * @author  nanshouxiao
- * @version  [版本号, 2017年3月15日]
- * @see  [相关类/方法]
- * @since  [产品/模块版本]
+ * @see
+ * @author 	nanshouxiao
+ * @date	2017-5-7 11:42:29
+ * @version	V1.0.0
  */
-public class MaoyanCity
+public class MaoyanCity implements Serializable
 {
-    private String pinyin;
+    /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = 1L;
     
+    /**
+     * 主键id
+     */
     private Integer id;
     
-    private String open;
+    /**
+     * 城市名称
+     */
+    private String name;
     
+    /**
+     * 城市拼音
+     */
+    private String pinyin;
+    
+    /**
+     * 上线时间
+     */
+    private Integer onlineTime;
+    
+    /**
+     * 排序
+     */
     private String rank;
     
-    private String onlineTime;
+    /**
+     * 是否支持
+     */
+    private String open;
     
-    private String name;
+    /**
+     * 获取主键id
+     */
+    public Integer getId(){
+    	return this.id;
+    }
+    
+    /**
+     * 设置主键id
+     */
+    public void setId(Integer id){
+    	this.id = id;
+    }
+    
+    /**
+     * 获取城市名称
+     */
+    public String getName(){
+    	return this.name;
+    }
+    
+    /**
+     * 设置城市名称
+     */
+    public void setName(String name){
+    	this.name = name;
+    }
+    
+    /**
+     * 获取城市拼音
+     */
+    public String getPinyin(){
+    	return this.pinyin;
+    }
+    
+    /**
+     * 设置城市拼音
+     */
+    public void setPinyin(String pinyin){
+    	this.pinyin = pinyin;
+    }
+    
+    /**
+     * 获取上线时间
+     */
+    public Integer getOnlineTime(){
+    	return this.onlineTime;
+    }
+    
+    /**
+     * 设置上线时间
+     */
+    public void setOnlineTime(Integer onlineTime){
+    	this.onlineTime = onlineTime;
+    }
+    
+    /**
+     * 获取排序
+     */
+    public String getRank(){
+    	return this.rank;
+    }
+    
+    /**
+     * 设置排序
+     */
+    public void setRank(String rank){
+    	this.rank = rank;
+    }
+    
+    /**
+     * 获取是否支持
+     */
+    public String getOpen(){
+    	return this.open;
+    }
+    
+    /**
+     * 设置是否支持
+     */
+    public void setOpen(String open){
+    	this.open = open;
+    }
+    
+    
+    @Override
+    public String toString()
+    {
+        return new StringBuilder(super.toString()).append("[")
+	      .append("id=").append(getId()).append(", ")
+	      .append("name=").append(getName()).append(", ")
+	      .append("pinyin=").append(getPinyin()).append(", ")
+	      .append("onlineTime=").append(getOnlineTime()).append(", ")
+	      .append("rank=").append(getRank()).append(", ")
+	      .append("open=").append(getOpen())
+	      .append("]").toString();
+    }
 }

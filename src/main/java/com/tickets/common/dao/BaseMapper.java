@@ -32,6 +32,14 @@ public interface BaseMapper<T>
     Integer saveEntity(final T entity);
     
     /**
+     * 批量添加实体数据
+     * 
+     * @param entityList
+     * @return
+     */
+    Integer batchSaveEntity(final List<?> entityList);
+    
+    /**
      * 保存新增或修改的对象.
      * 
      * @param entity

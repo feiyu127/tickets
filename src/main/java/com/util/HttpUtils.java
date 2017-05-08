@@ -9,7 +9,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 
-<<<<<<< HEAD
 public class HttpUtils {
 	public static void main(String[] args) {
 		String nuomiCityListUrl = "http://dianying.nuomi.com/common/city/citylist";
@@ -18,6 +17,10 @@ public class HttpUtils {
 		System.out.println(result);
 		// post("http://mobile.fengchaowy.cn/LoginActionN/loginN.do",
 		// "userName=xuejiao&password=123456&groupCode=sd");
+	}
+
+	public static String get(String url) {
+		return get(url, "");
 	}
 
 	public static String get(String url, String param) {

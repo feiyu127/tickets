@@ -19,13 +19,13 @@ public class MaoYanTest
         JSONObject resultJson = (JSONObject)JSON.parse(string);
         JSONObject data = resultJson.getJSONObject("data");
         JSONObject cityMap = data.getJSONObject("CityMap");
-        
+        System.out.println(cityMap.get("0"));
         JSONArray cityChars = data.getJSONArray("CityChars");
-        for(Object str : cityChars){
-            
-            System.out.println(str);
-            System.out.println(cityMap.getJSONArray((String)str));
-        }
+//        for(Object str : cityChars){
+//            
+//            System.out.println(str);
+//            System.out.println(cityMap.getJSONArray((String)str));
+//        }
     }
     
     @Test

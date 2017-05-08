@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tickets.maoyan.dao.MaoyanCinemaMapper">
+
+	<resultMap type="maoyanCinema"  id="maoyanCinemaResultMap">
+		<id column="id" property="id" />
+		<result column="nm" property="nm" />
+		<result column="addr" property="addr" />
+		<result column="lat" property="lat" />
+		<result column="lng" property="lng" />
+		<result column="area" property="area" />
+		<result column="deal" property="deal" />
+		<result column="distance" property="distance" />
+		<result column="sell" property="sell" />
+		<result column="sell_price" property="sellPrice" />
+		<result column="imax" property="imax" />
+		<result column="sellmin" property="sellmin" />
+		<result column="deal_price" property="dealPrice" />
+		<result column="follow" property="follow" />
+		<result column="dis" property="dis" />
+		<result column="preferential" property="preferential" />
+		<result column="ct" property="ct" />
+		<result column="reference_price" property="referencePrice" />
+		<result column="show_count" property="showCount" />
+		<result column="brd" property="brd" />
+		<result column="brd_id" property="brdId" />
+		<result column="poi_id" property="poiId" />
+	</resultMap>
+	
+	<insert id="saveEntity" parameterType="maoyanCinema" >
+	INSERT INTO maoyan_cinema(
+		id,
+		nm,
+		addr,
+		lat,
+		lng,
+		area,
+		deal,
+		distance,
+		sell,
+		sell_price,
+		imax,
+		sellmin,
+		deal_price,
+		follow,
+		dis,
+		preferential,
+		ct,
+		reference_price,
+		show_count,
+		brd,
+		brd_id,
+		poi_id
+	) values(
+		#{id},
+		#{nm},
+		#{addr},
+		#{lat},
+		#{lng},
+		#{area},
+		#{deal},
+		#{distance},
+		#{sell},
+		#{sellPrice},
+		#{imax},
+		#{sellmin},
+		#{dealPrice},
+		#{follow},
+		#{dis},
+		#{preferential},
+		#{ct},
+		#{referencePrice},
+		#{showCount},
+		#{brd},
+		#{brdId},
+		#{poiId}
+	)
+	</insert>
+	
+	<insert id="batchSaveEntity" >
+	INSERT INTO maoyan_cinema(
+		id,
+		nm,
+		addr,
+		lat,
+		lng,
+		area,
+		deal,
+		distance,
+		sell,
+		sell_price,
+		imax,
+		sellmin,
+		deal_price,
+		follow,
+		dis,
+		preferential,
+		ct,
+		reference_price,
+		show_count,
+		brd,
+		brd_id,
+		poi_id
+	) values
+	<foreach collection="list" item="item" separator=",">
+	(
+		#{item.id},
+		#{item.nm},
+		#{item.addr},
+		#{item.lat},
+		#{item.lng},
+		#{item.area},
+		#{item.deal},
+		#{item.distance},
+		#{item.sell},
+		#{item.sellPrice},
+		#{item.imax},
+		#{item.sellmin},
+		#{item.dealPrice},
+		#{item.follow},
+		#{item.dis},
+		#{item.preferential},
+		#{item.ct},
+		#{item.referencePrice},
+		#{item.showCount},
+		#{item.brd},
+		#{item.brdId},
+		#{item.poiId}
+	)
+	</foreach>
+	</insert>
+	
+	
+	<select id="getEntityByKey" parameterType="Integer" resultMap="maoyanCinemaResultMap">
+		SELECT
+		id,
+		nm,
+		addr,
+		lat,
+		lng,
+		area,
+		deal,
+		distance,
+		sell,
+		sell_price,
+		imax,
+		sellmin,
+		deal_price,
+		follow,
+		dis,
+		preferential,
+		ct,
+		reference_price,
+		show_count,
+		brd,
+		brd_id,
+		poi_id
+		FROM `maoyan_cinema`
+		WHERE id = #{_parameter}
+	</select>
+	
+	
+</mapper>

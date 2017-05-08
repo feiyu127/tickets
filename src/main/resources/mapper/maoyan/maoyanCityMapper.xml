@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tickets.maoyan.dao.MaoyanCityMapper">
+
+	<resultMap type="maoyanCity"  id="maoyanCityResultMap">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="pinyin" property="pinyin" />
+		<result column="online_time" property="onlineTime" />
+		<result column="rank" property="rank" />
+		<result column="open" property="open" />
+	</resultMap>
+	
+	<insert id="saveEntity" parameterType="maoyanCity" >
+	INSERT INTO maoyan_city(
+		id,
+		name,
+		pinyin,
+		online_time,
+		rank,
+		open
+	) values(
+		#{id},
+		#{name},
+		#{pinyin},
+		#{onlineTime},
+		#{rank},
+		#{open}
+	)
+	</insert>
+	
+	<insert id="batchSaveEntity" >
+	INSERT INTO maoyan_city(
+		id,
+		name,
+		pinyin,
+		online_time,
+		rank,
+		open
+	) values
+	<foreach collection="list" item="item" separator=",">
+	(
+		#{item.id},
+		#{item.name},
+		#{item.pinyin},
+		#{item.onlineTime},
+		#{item.rank},
+		#{item.open}
+	)
+	</foreach>
+	</insert>
+	
+	
+	<select id="getEntityByKey" parameterType="Integer" resultMap="maoyanCityResultMap">
+		SELECT
+		id,
+		name,
+		pinyin,
+		online_time,
+		rank,
+		open
+		FROM `maoyan_city`
+		WHERE id = #{_parameter}
+	</select>
+	
+	
+</mapper>
