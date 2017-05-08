@@ -19,7 +19,7 @@ import com.tickets.common.dao.BaseMapper;
  * @date	2017-5-7 11:42:22
  * @version	V1.0.0
  */
-public interface MaoyanCinemaMapper extends BaseMapper<MaoyanCinema>
+public interface MaoyanCinemaMapper extends BaseMapper<MaoyanCinema, Integer>
 {
 
 }

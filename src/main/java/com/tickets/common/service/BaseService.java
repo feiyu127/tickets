@@ -10,6 +10,7 @@
 
 package com.tickets.common.service;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -21,7 +22,7 @@ import java.util.List;
  * @version	 
  * @desc    TODO
  */
-public interface BaseService<T> {
+public interface BaseService<T, ID extends Serializable> {
 	
 	/**
 	 * 新增实体数据模型
@@ -49,14 +50,14 @@ public interface BaseService<T> {
 	 * @param id
 	 * @throws AppBaseRuntimeException
 	 */
-	void deleteByKey(final Integer id);
+	void deleteByKey(final ID id);
 	
 	/**
 	 * 根据主键实体批量删除实体
 	 * @param ids
 	 * @throws AppBaseRuntimeException
 	 */
-	void batchDelete(final Collection<Integer> ids);
+	void batchDelete(final Collection<ID> ids);
 	
 	/**
 	 * 根据主键获得实体信息
@@ -64,7 +65,7 @@ public interface BaseService<T> {
 	 * @return
 	 * @throws AppBaseRuntimeException
 	 */
-	T getEntityByKey(final Integer id);
+	T getEntityByKey(final ID id);
 	
 	/**
 	 * 获得所有实体信息

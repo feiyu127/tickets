@@ -21,7 +21,7 @@ import com.tickets.sys.bean.SysUser;
  * @see [相关类/方法]
  * @since [产品/模块版本]
  */
-public interface SysUserMapper extends BaseMapper<SysUser> {
+public interface SysUserMapper extends BaseMapper<SysUser, Integer> {
 	/**
 	 * 根据用户名查询用户
 	 * 

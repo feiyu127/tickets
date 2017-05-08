@@ -21,7 +21,7 @@ import com.tickets.sys.bean.SysUser;
  * @see [相关类/方法]
  * @since [产品/模块版本]
  */
-public interface SysUserService extends BaseService<SysUser> {
+public interface SysUserService extends BaseService<SysUser, Integer> {
 	/**
 	 * 根据用户名查询用户
 	 * 

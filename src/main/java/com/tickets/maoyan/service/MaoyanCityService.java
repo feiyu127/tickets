@@ -19,7 +19,7 @@ import com.tickets.common.service.BaseService;
  * @date	2017-5-7 11:42:29
  * @version	V1.0.0
  */
-public interface MaoyanCityService extends BaseService<MaoyanCity>
+public interface MaoyanCityService extends BaseService<MaoyanCity, Integer>
 {
 
 }

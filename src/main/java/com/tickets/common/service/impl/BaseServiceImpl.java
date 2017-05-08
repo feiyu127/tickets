@@ -10,6 +10,7 @@
 
 package com.tickets.common.service.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -28,18 +29,17 @@ import com.tickets.common.service.BaseService;
  * @version
  * @desc
  */
-public abstract class BaseServiceImpl<T> implements BaseService<T>
+public abstract class BaseServiceImpl<T, ID extends Serializable> implements BaseService<T, ID>
 {
     
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
     
     @Autowired
-    protected BaseMapper<T> baseMapper;
+    protected BaseMapper<T, ID> baseMapper;
     
     @Override
     public Integer saveEntity(T entity)
     {
-            
             return (Integer)baseMapper.saveEntity(entity);
     }
     
@@ -72,7 +72,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T>
     }
     
     @Override
-    public void deleteByKey(Integer id)
+    public void deleteByKey(ID id)
     {
         try
         {
@@ -86,7 +86,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T>
     }
     
     @Override
-    public void batchDelete(Collection<Integer> ids)
+    public void batchDelete(Collection<ID> ids)
     {
         try
         {
@@ -100,7 +100,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T>
     }
     
     @Override
-    public T getEntityByKey(Integer id)
+    public T getEntityByKey(ID id)
     {
         try
         {

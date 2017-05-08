@@ -11,6 +11,7 @@ package com.tickets.maoyan.service.impl;
 import com.tickets.maoyan.bean.MaoyanCinema;
 import com.tickets.maoyan.service.MaoyanCinemaService;
 import com.tickets.common.service.impl.BaseServiceImpl;
+
 import org.springframework.stereotype.Service;
 
 /**
@@ -22,7 +23,7 @@ import org.springframework.stereotype.Service;
  * @version	V1.0.0
  */
 @Service("maoyanCinemaServiceImpl")
-public class MaoyanCinemaServiceImpl extends BaseServiceImpl<MaoyanCinema> implements MaoyanCinemaService
+public class MaoyanCinemaServiceImpl extends BaseServiceImpl<MaoyanCinema, Integer> implements MaoyanCinemaService
 {
 
 }

@@ -19,7 +19,7 @@ import com.tickets.common.dao.BaseMapper;
  * @date	2017-5-7 11:42:29
  * @version	V1.0.0
  */
-public interface MaoyanCityMapper extends BaseMapper<MaoyanCity>
+public interface MaoyanCityMapper extends BaseMapper<MaoyanCity, Integer>
 {
 
 }

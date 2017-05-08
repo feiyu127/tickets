@@ -10,6 +10,7 @@
  */
 package com.tickets.common.dao;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -21,7 +22,7 @@ import java.util.List;
  * @see [相关类/方法]
  * @since [产品/模块版本]
  */
-public interface BaseMapper<T>
+public interface BaseMapper<T, ID extends Serializable>
 {
     /**
      * 保存数据实体信息
@@ -58,14 +59,14 @@ public interface BaseMapper<T>
      * 
      * @param id
      */
-    void deleteByKey(final Integer id);
+    void deleteByKey(final ID id);
     
     /**
      * 根据主键信息，批量删除信息
      * 
      * @param ids
      */
-    void batchDelete(final Collection<Integer> ids);
+    void batchDelete(final Collection<ID> ids);
     
     /**
      * 按id获取对象.
@@ -73,7 +74,7 @@ public interface BaseMapper<T>
      * @param id
      * @return
      */
-    T getEntityByKey(final Integer id);
+    T getEntityByKey(final ID id);
     
     /**
      * 获取全部对象.

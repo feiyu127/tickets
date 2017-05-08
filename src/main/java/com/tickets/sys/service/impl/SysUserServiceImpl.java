@@ -9,7 +9,7 @@ import com.tickets.sys.dao.SysUserMapper;
 import com.tickets.sys.service.SysUserService;
 
 @Service
-public class SysUserServiceImpl extends BaseServiceImpl<SysUser> implements SysUserService
+public class SysUserServiceImpl extends BaseServiceImpl<SysUser, Integer> implements SysUserService
 {
 	
 	@Autowired
