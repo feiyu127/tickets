@@ -11,7 +11,6 @@ package com.tickets.maoyan.service.impl;
 import com.tickets.maoyan.bean.MaoyanCity;
 import com.tickets.maoyan.service.MaoyanCityService;
 import com.tickets.common.service.impl.BaseServiceImpl;
-
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,7 +18,7 @@ import org.springframework.stereotype.Service;
  * 
  * @see
  * @author 	nanshouxiao
- * @date	2017-5-7 11:42:29
+ * @date	2017-5-8 12:30:34
  * @version	V1.0.0
  */
 @Service("maoyanCityServiceImpl")

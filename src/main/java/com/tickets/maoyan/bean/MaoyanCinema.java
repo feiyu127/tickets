@@ -15,7 +15,7 @@ import java.io.Serializable;
  * 
  * @see
  * @author 	nanshouxiao
- * @date	2017-5-7 11:42:22
+ * @date	2017-5-8 12:30:46
  * @version	V1.0.0
  */
 public class MaoyanCinema implements Serializable

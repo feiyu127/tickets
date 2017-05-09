@@ -15,7 +15,7 @@ import java.io.Serializable;
  * 
  * @see
  * @author 	nanshouxiao
- * @date	2017-5-7 11:42:29
+ * @date	2017-5-8 12:30:34
  * @version	V1.0.0
  */
 public class MaoyanCity implements Serializable
@@ -26,7 +26,7 @@ public class MaoyanCity implements Serializable
     private static final long serialVersionUID = 1L;
     
     /**
-     * 主键id
+     * 城市id
      */
     private Integer id;
     
@@ -56,14 +56,14 @@ public class MaoyanCity implements Serializable
     private String open;
     
     /**
-     * 获取主键id
+     * 获取城市id
      */
     public Integer getId(){
     	return this.id;
     }
     
     /**
-     * 设置主键id
+     * 设置城市id
      */
     public void setId(Integer id){
     	this.id = id;

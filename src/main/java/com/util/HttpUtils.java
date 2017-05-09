@@ -20,12 +20,15 @@ public class HttpUtils {
 	}
 
 	public static String get(String url) {
-		return get(url, "");
+		return get(url, null);
 	}
 
 	public static String get(String url, String param) {
 		String result = "";
-		String realUrl = url + "?" + param;
+		String realUrl = url;
+		if(param != null){
+		    realUrl += "?" + param;
+		}
 		BufferedReader in = null;
 		try {
 			URL httpUrl = new URL(realUrl);
@@ -72,7 +75,7 @@ public class HttpUtils {
 				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36");
 	}
 
-	public static void post(String url, String param) {
+	public static String post(String url, String param) {
 		PrintWriter out = null;
 		BufferedReader in = null;
 		String result = "";
@@ -95,7 +98,7 @@ public class HttpUtils {
 			while ((line = in.readLine()) != null) {
 				result += line;
 			}
-			System.out.println(result);
+			return result;
 		} catch (Exception e) {
 			System.out.println("发送 POST 请求出现异常！" + e);
 			e.printStackTrace();
@@ -113,5 +116,6 @@ public class HttpUtils {
 				ex.printStackTrace();
 			}
 		}
+        return result;
 	}
 }
