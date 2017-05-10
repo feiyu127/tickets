@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tickets.maoyan.dao.MaoyanMovieShowMapper">
+
+	<resultMap type="maoyanMovieShow"  id="maoyanMovieShowResultMap">
+		<id column="show_id" property="showId" />
+		<result column="movie_id" property="movieId" />
+		<result column="cinema_id" property="cinemaId" />
+		<result column="show_date" property="showDate" />
+		<result column="dt" property="dt" />
+		<result column="tm" property="tm" />
+		<result column="end" property="end" />
+		<result column="preferential" property="preferential" />
+		<result column="sell" property="sell" />
+		<result column="tp" property="tp" />
+		<result column="lang" property="lang" />
+		<result column="embed" property="embed" />
+		<result column="gray_desc" property="grayDesc" />
+		<result column="seat_status" property="seatStatus" />
+		<result column="is_morrow" property="isMorrow" />
+		<result column="th" property="th" />
+		<result column="sell_pr_str" property="sellPrStr" />
+		<result column="pr_str" property="prStr" />
+	</resultMap>
+	
+	<insert id="saveEntity" parameterType="maoyanMovieShow" >
+	INSERT INTO maoyan_movie_show(
+		show_id,
+		movie_id,
+		cinema_id,
+		show_date,
+		dt,
+		tm,
+		end,
+		preferential,
+		sell,
+		tp,
+		lang,
+		embed,
+		gray_desc,
+		seat_status,
+		is_morrow,
+		th,
+		sell_pr_str,
+		pr_str
+	) values(
+		#{showId},
+		#{movieId},
+		#{cinemaId},
+		#{showDate},
+		#{dt},
+		#{tm},
+		#{end},
+		#{preferential},
+		#{sell},
+		#{tp},
+		#{lang},
+		#{embed},
+		#{grayDesc},
+		#{seatStatus},
+		#{isMorrow},
+		#{th},
+		#{sellPrStr},
+		#{prStr}
+	)
+	</insert>
+	
+	<insert id="batchSaveEntity" >
+	INSERT INTO maoyan_movie_show(
+		show_id,
+		movie_id,
+		cinema_id,
+		show_date,
+		dt,
+		tm,
+		end,
+		preferential,
+		sell,
+		tp,
+		lang,
+		embed,
+		gray_desc,
+		seat_status,
+		is_morrow,
+		th,
+		sell_pr_str,
+		pr_str
+	) values
+	<foreach collection="list" item="item" separator=",">
+	(
+		#{item.showId},
+		#{item.movieId},
+		#{item.cinemaId},
+		#{item.showDate},
+		#{item.dt},
+		#{item.tm},
+		#{item.end},
+		#{item.preferential},
+		#{item.sell},
+		#{item.tp},
+		#{item.lang},
+		#{item.embed},
+		#{item.grayDesc},
+		#{item.seatStatus},
+		#{item.isMorrow},
+		#{item.th},
+		#{item.sellPrStr},
+		#{item.prStr}
+	)
+	</foreach>
+	</insert>
+	
+	
+	<select id="getEntityByKey" parameterType="Integer" resultMap="maoyanMovieShowResultMap">
+		SELECT
+		show_id,
+		movie_id,
+		cinema_id,
+		show_date,
+		dt,
+		tm,
+		end,
+		preferential,
+		sell,
+		tp,
+		lang,
+		embed,
+		gray_desc,
+		seat_status,
+		is_morrow,
+		th,
+		sell_pr_str,
+		pr_str
+		FROM `maoyan_movie_show`
+		WHERE show_id = #{_parameter}
+	</select>
+	
+	
+</mapper>

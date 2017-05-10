@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tickets.maoyan.dao.MaoyanMovieMapper">
+
+	<resultMap type="maoyanMovie"  id="maoyanMovieResultMap">
+		<id column="id" property="id" />
+		<result column="nm" property="nm" />
+		<result column="rt" property="rt" />
+		<result column="dur" property="dur" />
+		<result column="img" property="img" />
+		<result column="show_info" property="showInfo" />
+		<result column="snum" property="snum" />
+		<result column="dir" property="dir" />
+		<result column="show_date" property="showDate" />
+		<result column="sc" property="sc" />
+		<result column="wish" property="wish" />
+		<result column="is_3d" property="is3d" />
+		<result column="late" property="late" />
+		<result column="cat" property="cat" />
+		<result column="sn" property="sn" />
+		<result column="scm" property="scm" />
+		<result column="ver" property="ver" />
+		<result column="star" property="star" />
+		<result column="src" property="src" />
+		<result column="imax" property="imax" />
+		<result column="vd" property="vd" />
+		<result column="preSale" property="preSale" />
+		<result column="time" property="time" />
+		<result column="pn" property="pn" />
+		<result column="cnms" property="cnms" />
+	</resultMap>
+	
+	<insert id="saveEntity" parameterType="maoyanMovie" >
+	INSERT INTO maoyan_movie(
+		id,
+		nm,
+		rt,
+		dur,
+		img,
+		show_info,
+		snum,
+		dir,
+		show_date,
+		sc,
+		wish,
+		is_3d,
+		late,
+		cat,
+		sn,
+		scm,
+		ver,
+		star,
+		src,
+		imax,
+		vd,
+		preSale,
+		time,
+		pn,
+		cnms
+	) values(
+		#{id},
+		#{nm},
+		#{rt},
+		#{dur},
+		#{img},
+		#{showInfo},
+		#{snum},
+		#{dir},
+		#{showDate},
+		#{sc},
+		#{wish},
+		#{is3d},
+		#{late},
+		#{cat},
+		#{sn},
+		#{scm},
+		#{ver},
+		#{star},
+		#{src},
+		#{imax},
+		#{vd},
+		#{preSale},
+		#{time},
+		#{pn},
+		#{cnms}
+	)
+	</insert>
+	
+	<insert id="batchSaveEntity" >
+	INSERT INTO maoyan_movie(
+		id,
+		nm,
+		rt,
+		dur,
+		img,
+		show_info,
+		snum,
+		dir,
+		show_date,
+		sc,
+		wish,
+		is_3d,
+		late,
+		cat,
+		sn,
+		scm,
+		ver,
+		star,
+		src,
+		imax,
+		vd,
+		preSale,
+		time,
+		pn,
+		cnms
+	) values
+	<foreach collection="list" item="item" separator=",">
+	(
+		#{item.id},
+		#{item.nm},
+		#{item.rt},
+		#{item.dur},
+		#{item.img},
+		#{item.showInfo},
+		#{item.snum},
+		#{item.dir},
+		#{item.showDate},
+		#{item.sc},
+		#{item.wish},
+		#{item.is3d},
+		#{item.late},
+		#{item.cat},
+		#{item.sn},
+		#{item.scm},
+		#{item.ver},
+		#{item.star},
+		#{item.src},
+		#{item.imax},
+		#{item.vd},
+		#{item.preSale},
+		#{item.time},
+		#{item.pn},
+		#{item.cnms}
+	)
+	</foreach>
+	</insert>
+	
+	
+	<select id="getEntityByKey" parameterType="Integer" resultMap="maoyanMovieResultMap">
+		SELECT
+		id,
+		nm,
+		rt,
+		dur,
+		img,
+		show_info,
+		snum,
+		dir,
+		show_date,
+		sc,
+		wish,
+		is_3d,
+		late,
+		cat,
+		sn,
+		scm,
+		ver,
+		star,
+		src,
+		imax,
+		vd,
+		preSale,
+		time,
+		pn,
+		cnms
+		FROM `maoyan_movie`
+		WHERE id = #{_parameter}
+	</select>
+	
+	
+</mapper>
