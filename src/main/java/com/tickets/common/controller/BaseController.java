@@ -10,7 +10,6 @@
 
 package com.tickets.common.controller;
 
-import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -37,7 +36,6 @@ import com.tickets.common.service.BaseService;
  * @author  feiyu127
  * @date	
  * @version	 
- * @desc    TODO
  */
 public abstract class BaseController<T> {
 
