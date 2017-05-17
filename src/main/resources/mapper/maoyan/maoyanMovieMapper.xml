@@ -177,5 +177,35 @@
 		WHERE id = #{_parameter}
 	</select>
 	
+	<select id="findByParamObj" resultMap="maoyanMovieResultMap">
+		SELECT
+		id,
+		nm,
+		rt,
+		dur,
+		img,
+		show_info,
+		snum,
+		dir,
+		show_date,
+		sc,
+		wish,
+		is_3d,
+		late,
+		cat,
+		sn,
+		scm,
+		ver,
+		star,
+		src,
+		imax,
+		vd,
+		preSale,
+		time,
+		pn,
+		cnms
+		FROM `maoyan_movie`
+	</select>
+	
 	
 </mapper>

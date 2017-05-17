@@ -96,10 +96,10 @@ public interface BaseService<T, ID extends Serializable> {
      * 查询列表(包含分页)
      *
      * @param entity
-     * @param pageParam
+     * @param rowBounds
      * @return
      */
-    List<T> findByParamObj(final T entity, RowBounds pageParam);
+    List<T> findByParamObj(final T entity, RowBounds rowBounds);
 	
 }
 

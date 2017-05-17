@@ -185,5 +185,32 @@
 		FROM `maoyan_cinema`
 	</select>
 	
+	<select id="findByParamObj" resultMap="maoyanCinemaResultMap">
+		SELECT
+		id,
+		nm,
+		addr,
+		lat,
+		lng,
+		area,
+		deal,
+		distance,
+		sell,
+		sell_price,
+		imax,
+		sellmin,
+		deal_price,
+		follow,
+		dis,
+		preferential,
+		ct,
+		reference_price,
+		show_count,
+		brd,
+		brd_id,
+		poi_id
+		FROM `maoyan_cinema`
+	</select>
+	
 	
 </mapper>

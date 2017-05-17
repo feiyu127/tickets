@@ -165,7 +165,7 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Bas
         }
         catch (Exception e)
         {
-            logger.error("", e);
+            e.printStackTrace();
             throw new RuntimeException();
         }
     }

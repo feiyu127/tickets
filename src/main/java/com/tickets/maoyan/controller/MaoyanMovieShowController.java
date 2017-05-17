@@ -27,7 +27,6 @@ import com.tickets.common.controller.BaseController;
 public class MaoyanMovieShowController extends BaseController<MaoyanMovieShow>
 {
     @RequestMapping("getPage")
-    @Fa
     public void test(){
         
     }

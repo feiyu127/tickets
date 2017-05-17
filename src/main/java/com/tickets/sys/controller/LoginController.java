@@ -11,13 +11,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tickets.common.controller.BaseController;
 import com.tickets.sys.bean.SysUser;
 import com.tickets.sys.service.SysUserService;
 
 @Controller
 @RequestMapping("login")
-public class LoginController extends BaseController<String>
+public class LoginController
 {
     
     @Resource
@@ -27,7 +26,6 @@ public class LoginController extends BaseController<String>
     public void getUser(SysUser user, HttpServletRequest req, HttpServletResponse resp)
     {
         SysUser existsUser = sysUserService.getUserByLoginName(user);
-        
         if(existsUser != null && existsUser.getPassword().equals(user.getPassword())){
         	HttpSession session = req.getSession();
         	System.out.println("login session Id:" + session.getId());

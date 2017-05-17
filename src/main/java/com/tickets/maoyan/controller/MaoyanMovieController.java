@@ -11,8 +11,8 @@ package com.tickets.maoyan.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tickets.maoyan.bean.MaoyanMovie;
 import com.tickets.common.controller.BaseController;
+import com.tickets.maoyan.bean.MaoyanMovie;
 
 /**
  * 猫眼影片
@@ -26,5 +26,8 @@ import com.tickets.common.controller.BaseController;
 @RequestMapping("maoyanMovie")
 public class MaoyanMovieController extends BaseController<MaoyanMovie>
 {
-
+    @RequestMapping("cinemaList")
+    public String getListPage(){
+        return "maoyan/maoyan_movie_list";
+    }
 }

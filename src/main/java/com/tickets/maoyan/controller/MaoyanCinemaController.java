@@ -27,4 +27,8 @@ import com.tickets.common.controller.BaseController;
 public class MaoyanCinemaController extends BaseController<MaoyanCinema>
 {
 
+    @RequestMapping("cinemaList")
+    public String getListPage(){
+        return "maoyan/maoyan_cinema_list";
+    }
 }
