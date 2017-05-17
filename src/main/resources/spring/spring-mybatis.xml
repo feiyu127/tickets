@@ -70,6 +70,21 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath:mapper/**/*.xml" />
 		<property name="typeAliasesPackage" value="com.tickets.sys.bean;com.tickets.maoyan.bean" />
+		<property name="plugins">
+			<array>
+				<bean class="com.github.pagehelper.PageInterceptor">
+					<property name="properties">
+						<!--使用下面的方式配置参数，一行配置一个 -->
+						<value>
+							helperDialect=mysql
+							offsetAsPageNum=true
+							rowBoundsWithCount=true
+							reasonable=true
+						</value>
+					</property>
+				</bean>
+			</array>
+		</property>
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

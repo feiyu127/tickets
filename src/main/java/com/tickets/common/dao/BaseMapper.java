@@ -14,6 +14,8 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
+
 /**
  * <一句话功能简述>
  * 
@@ -97,5 +99,15 @@ public interface BaseMapper<T, ID extends Serializable>
      * @return
      */
     int getCount(final T entity);
+    
+    /**
+     * 
+     * 查询列表(包含分页)
+     *
+     * @param entity
+     * @param pageParam
+     * @return
+     */
+    List<T> findByParamObj(final T entity, RowBounds pageParam);
     
 }

@@ -14,6 +14,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -154,5 +155,20 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Bas
             throw new RuntimeException();
         }
     }
+    
+    @Override
+    public List<T> findByParamObj(T entity, RowBounds rowBounds)
+    {
+        try
+        {
+            return baseMapper.findByParamObj(entity, rowBounds);
+        }
+        catch (Exception e)
+        {
+            logger.error("", e);
+            throw new RuntimeException();
+        }
+    }
+
     
 }
